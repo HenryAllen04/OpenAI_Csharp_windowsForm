@@ -29,7 +29,7 @@ namespace GPTwork
         }
         private void GetWeatherData(string location)
         {
-            string apiKey = "93f2085dd9cdbb782e0f83159f418af2";
+            string apiKey = "{YOUR API KEY}";
             string apiUrl = $"https://api.openweathermap.org/data/2.5/weather?q={location}&appid={apiKey}&units=metric";
             var client = new WebClient();
             var response = client.DownloadString(apiUrl);
@@ -78,7 +78,7 @@ namespace GPTwork
             string prompt = $"give Health advice for these weather conditions {weather}, temp {temperature}, humidity {humidity}.";
             ;
             int maxTokens = 100;
-            var openaiClient = new OpenAIAPI("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");
+            var openaiClient = new OpenAIAPI("{YOUR API KEY}");
             var completionRequest = new CompletionRequest
             {
                 Model = model,
